@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+  discovery-service:
+    image: ''
+    ports:
+    - 8761:8761
+
+  workout-programs-service:
+    image: ''
+    environment:
+      ''
+    ports:
+      - 9090:9090
+
+  forum-service:
+    image: ''
+    environment:
+
+    ports:
+    - 9091:9091
+
+  payment-service:
+    image: ''
+    environment:
+      ''
+    ports:
+      - 9092:9092
+
+  invoice-service:
+    image: ''
+    environment:
+
+    ports:
+    - 9093:9093
+
+  auth-service:
+    image: ''
+    environment:
+      ''
+    ports:
+    - 9094:9094
+
+

@@ -1,0 +1,36 @@
+management:
+  endpoint.gateway.enabled: true
+
+spring:
+  cloud:
+    gateway:
+      discovery.locator.enabled: true
+      routes:
+        - id: workout-programs-service-id
+          uri: lb://workout-programs-service
+          predicates:
+            - Path=/api/workouts/**, /api/exercises/**
+          filters:
+            - AuthFilter
+        - id: forum-service-id
+          uri: lb://forum-service
+          predicates:
+            Path=/api/forum/**
+          filters:
+            - AuthFilter
+        - id: payment-service-id
+          uri: lb://payment-service
+          predicates:
+            Path=/api/orders/**
+          filters:
+            - AuthFilter
+        - id: payments-service-id
+          uri: lb://payments-service
+          predicates:
+            Path=/api/payments/**
+          filters:
+            - AuthFilter
+        - id: invoices-service-id
+          uri: lb://invoice-service
+          predicates:
+            Path=/api/invoices/**
